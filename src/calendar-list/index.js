@@ -280,6 +280,14 @@ class CalendarList extends Component {
     }
   }
 
+  onLayout(event) {
+    if (this.props.onLayout) {
+      setTimeout(() => {
+          this.props.onLayout(event);
+      }, 1);
+    }
+  }
+
   render() {
     const {style, pastScrollRange, futureScrollRange, horizontal, showScrollIndicator, testID} = this.props;
 
